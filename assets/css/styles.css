@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+ color: #001F50;
+ background-color: #C5EDF9;
+ font-family: montserrat;
+ font-size: 16px;
+}
+
+ul{
+    margin: 0;
+}
+
+/* Setting all icons */
+.ti{
+    display:block;
+    width: 1em;
+    height: 1em;
+}
+
+.ti-search{
+    display: inline-block;
+    background: url('../img/search-icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ti-recent{
+    display: inline-block;
+    background: url('../img/recent.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ti-cancel{
+    display: inline-block;
+    background: url('../img/cancel.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ti-pin{
+    display: inline-block;
+    background: url('../img/location-pin.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ti-sunny{
+    display: inline-block;
+    background: url('../img/weather-sunny.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ti-wind-speed{
+    display: inline-block;
+    background: url('../img/wind-speed.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ti-rain-chance{
+    display: inline-block;
+    background: url('../img/rain-chance.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ti-pressure{
+    display: inline-block;
+    background: url('../img/pressure.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ti-uv-index{
+    display: inline-block;
+    background: url('../img/uv-index.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* searchbod styles */
+
+#search form{
+    background-color: #BDE8F5;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+
+.search-box {
+    margin-top: 10px;
+    width: 80%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #001F50;
+    padding: 10px;
+}
+
+.search-box i{
+    font-size: 1.2em;
+}
+
+.search-box > input{
+    background-color: #BDE8F5;
+    padding-left: 10px;
+    flex: 1;
+    width: 90%;
+    height: 40px;
+    border: none;
+    font-size: 1.2em;
+    outline: none;
+}
+
+.search-box input::placeholder{
+    color: #001F50;
+}
+
+.suggestion-list{
+    box-sizing: border-box;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: space-between;
+width: 80%;
+background-color: #BDE8F5;
+border-radius: 0 0 10px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding: 0;
+}
+
+.suggestion-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0px;
+}
+.suggestion-item:hover{
+ background-color: #b6dce7;
+}
+
+
+/* main section  */
+
+.main{
+    background-color: #BDE8F5;
+    height: 200px;
+    width: 78%;
+    border: none;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 50% 56% cover;
+    background-position: top right;
+    background-image: url('../img/weather-sunny.svg');
+ }
+
+
+.card{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.temperature{
+    font-size: 3em;
+}
+
+
+/* overview section  */
+
+
+#overview,#upcoming-days{
+    width: 80%;
+    margin: 10px auto;
+}
+
+#overview .card{
+    background-color: #BDE8F5;
+}
+
+#overview .card-body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#overview .ti{
+    width: 31px;
+    height: 30px;
+}
+
+#overview .card{
+    border: none;
+}
+
+
+.green-triangle{
+    color: white;
+    width: 0px;
+    height: 0px;
+    border: 8px solid black;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: green;
+    border-left-color: transparent;
+}
+
+
+/* upcoming days section  */
+
+#upcoming-days h5{
+    font-size: 15px;
+    font-weight: 600;
+}
+#upcoming-days h6{
+    font-size: 12px;
+
+}
+
+#upcoming-days .card{
+    border: none;
+    background-color: #BDE8F5;
+}
+
+#upcoming-days .card p{
+    font-size: 10px;
+    margin: 0;
+}
+
+#upcoming-days .info-box{
+    margin-bottom: 3px;
+    border-bottom: 1px solid #001F50;
+    width: 100%;
+    display: flex;
+}
+
+#upcoming-days .card-temperature{
+  font-weight: 500;
+}
+
+
+
+@media only screen and (max-width: 769px) {
+    .main{
+        background-attachment: none;
+        background-size: cover 550px;
+        background-position: bottom right -80px;
+    }
+  }
