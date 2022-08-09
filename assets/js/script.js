@@ -272,7 +272,7 @@ const locationText = document.querySelector('.place')
 function displayName(value){
 	searchInput.value = value;
     
-	fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&APPID=b3d233c09be1dd283fac50c81f1249cd`)
+	fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&APPID=b3d233c09be1dd283fac50c81f1249cd`)
 	.then(result => result.json())
 	.then(data => {
 		showWeatherData(data)
@@ -290,7 +290,7 @@ const temperatureContainer = $('.temperature-container');
 //To make a request to the weather api
 searchContainer.on('submit', (e) => {
 	e.preventDefault();
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&APPID=b3d233c09be1dd283fac50c81f1249cd`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&APPID=b3d233c09be1dd283fac50c81f1249cd`)
 	.then(result => result.json())
 	.then(data => {
 		showWeatherData(data)
@@ -352,7 +352,7 @@ function setLocationInformation(locationName,currentTemperature,feelsLike,weathe
 											<p>${weather.main}</p>
 									<p class=""> Feels like ${feelsLike}°C</p>
 									`)
-   $('.main-img').attr("src",`http://openweathermap.org/img/wn/${weather.icon}@2x.png`)
+   $('.main-img').attr("src",`https://openweathermap.org/img/wn/${weather.icon}@2x.png`)
 									 
 
 						   
@@ -416,7 +416,7 @@ function setDaysAfter(data){
 							<div class="card-body">
 								
 								<div class="d-flex justify-content-center align-items-center">
-								    <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="${day.weather[0].description}">
+								    <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="${day.weather[0].description}">
 									<div class="card-head">
 										<h5 class="card-title d-flex align-items-center text-center">${dateToString[0]}</h5>
 										<h6 class="card-subtitle mb-2 text-center">${dateToString[2]},${dateToString[1]}</h6>
