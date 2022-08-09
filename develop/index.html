@@ -4,338 +4,155 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>Weather app</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
-    <!-- Bootstap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    
-    
-    
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <title>Weather Today</title>
 </head>
 <body>
-    
-        <div class="row">
-            <section id="search" class="col-md-4">
-                <form class="search-form" autocomplete="off" action="google">
-                   <div class="search-box">
-                       <i type="submit" class="ti ti-search"></i>
-                       <input name="q" class="search-input" type="text" placeholder="Search a location">
-                   </div>
-             
-                       <ul class="suggestion-list">
-                               
-                       </ul>
-             
-       
-                </form>
-            </section>
+
+        <nav class="sidebar active ">
+            <i class="ti ti-menu" id="menu-toggle"></i>
+            <ul class="nav-list">
+                <li>
+                    <form action="" class="search-form" autocomplete="off">
+                        <i class="ti ti-search"></i>
+                        <input name="q" class="search-input mb-5" type="text" placeholder="Search a location">
+                        <span class="tooltip">Search</span>   
+                        <ul class="suggestion-list mt-5">
+
+                        </ul>         
+                      </form>     
+                </li>
+            </ul>
+
+
+
+        </nav>
+
+        <main id="weather" class="col-md-9 container">
+
            
-        <main class="col-md-8">
-                <header class="text-center my-3">
-                    <h1>weather now</h1>
-                    <p>Friday, August 5th 2022</p>
-    
-                </header>
-                 
-                <section class="mb-3">
-                    <div class="row d-flex justify-content-center">
-                        <div class="card main col-md-10" >
-                            <div class="card-body w-50">
-                                <div class="text-center">
-                            <h5 class="card-title m-0"> <i class="ti ti-pin"></i>Missisauga</h5>
-                            <p class="font-weight-light">Ontario, Canada</p>
-                            </div>
-                            <div class=" p-0 text-center">
-                                <p class="temperature m-0">26°C</p>
-                                <p class="">sunny</p>
-                            </div>
-                            </div>
+            <header class="weather-title text-center">
+                <h1>weather now</h1>
+                <p class="current-date"></p>
+                <h5>Today's Overview</h5>
+            </header>
+           
+
+            <section class="mb-3 text-center" id="main-content">
+
+                <div class="row m-0 p-0 d-flex align-items-end justify-content-center">
+                    <div class="card main col-md-4 mr-3 d-flex flex-row justify-content-center align-items-center" >
+                        <div class=" main-card card-body">
+                           
+                        <div class=" place">
+                        <h5 class="card-title m-0"> <i class="ti ti-pin"></i>#City</h5>
                         </div>
+                        <div class=" p-0 temperature-container">
+                            <p class="temperature m-0">#°C</p>
+                            <p class="">#</p>
+                        </div>
+                        </div>
+                        <img class="main-img" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Card image cap">
                     </div>
-                </section>
+             
+          
 
 
-                <section id="overview">
-                    <h5>Today's Overview</h5>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-6 my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    <i class="ti ti-pressure"></i>
-                                    <div>
-                                        <h5 class="card-title">Wind speed</h5>
-                                        <h6 class="card-subtitle mb-2 ">12km/h</h6>
-                                    </div>
-                                    <div>
-                                        <div class="d-flex justify-content-between">
-                                        <div class="green-triangle"></div>
-                                        <p class="card-text ms-2">2km/h</p>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    <i class="ti ti-rain-chance"></i>
-                                    <div>
-                                        <h5 class="card-title">Chance of Rain</h5>
-                                        <h6 class="card-subtitle mb-2 ">24%</h6>
-                                    </div>
-                                    <div>
-                                        <div class="d-flex justify-content-between">
-                                        <div class="green-triangle"></div>
-                                        <p class="card-text ms-2">10%</p>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    <i class="ti ti-wind-speed"></i>
-                                    <div>
-                                        <h5 class="card-title">Pressure</h5>
-                                        <h6 class="card-subtitle mb-2 ">720 hpa</h6>
-                                    </div>
-                                    <div>
-                                        <div class="d-flex justify-content-between">
-                                        <i class="green-triangle"></i>
-                                        <p class="card-text ms-2">32 hpa</p>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    <i class="ti ti-uv-index"></i>
-                                    <div>
-                                        <h5 class="card-title">UV-Index</h5>
-                                        <h6 class="card-subtitle mb-2 ">2,3</h6>
-                                    </div>
-                                    <div>
-                                        <div class="d-flex justify-content-between">
-                                        <div class="green-triangle"></div>
-                                        <p class="card-text ms-2">1,3</p>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                </section>
-
-
-                <section id="upcoming-days">
-                    <h5>Upcoming days</h5>
-                    <div class="row">
-                        <div class="col my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <i class="ti ti-uv-index"></i>
-                                        <div class="card-head">
-                                            <h5 class="card-title d-flex align-items-center text-center">Saturday</h5>
-                                            <h6 class="card-subtitle mb-2 text-center">06 Aug</h6>
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                    <div class="d-flex flex-column align-items-center">
-                                          <div class="info-box">
-                                             <p><b>pressure</b> - 800mb</p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>wind</b> - 4.5 Km</p>
-                                             <p></p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>Humidity</b> - 30% </p>
-                                          </div>
-                                       
-                                    </div>
-                                    <div>
-                                        <div class="card-temperature">24°C</div>
-                                        <p>Sunny</p>
-                                    </div>
-    
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <i class="ti ti-uv-index"></i>
-                                        <div class="card-head">
-                                            <h5 class="card-title d-flex align-items-center text-center">Saturday</h5>
-                                            <h6 class="card-subtitle mb-2 text-center">06 Aug</h6>
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                    <div class="d-flex flex-column align-items-center">
-                                          <div class="info-box">
-                                             <p><b>pressure</b> - 800mb</p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>wind</b> - 4.5 Km</p>
-                                             <p></p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>Humidity</b> - 30% </p>
-                                          </div>
-                                       
-                                    </div>
-                                    <div>
-                                        <div class="card-temperature">24°C</div>
-                                        <p>Sunny</p>
-                                    </div>
-    
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <i class="ti ti-uv-index"></i>
-                                        <div class="card-head">
-                                            <h5 class="card-title d-flex align-items-center text-center">Saturday</h5>
-                                            <h6 class="card-subtitle mb-2 text-center">06 Aug</h6>
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                    <div class="d-flex flex-column align-items-center">
-                                          <div class="info-box">
-                                             <p><b>pressure</b> - 800mb</p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>wind</b> - 4.5 Km</p>
-                                             <p></p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>Humidity</b> - 30% </p>
-                                          </div>
-                                       
-                                    </div>
-                                    <div>
-                                        <div class="card-temperature">24°C</div>
-                                        <p>Sunny</p>
-                                    </div>
-    
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <i class="ti ti-uv-index"></i>
-                                        <div class="card-head">
-                                            <h5 class="card-title d-flex align-items-center text-center">Saturday</h5>
-                                            <h6 class="card-subtitle mb-2 text-center">06 Aug</h6>
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                    <div class="d-flex flex-column align-items-center">
-                                          <div class="info-box">
-                                             <p><b>pressure</b> - 800mb</p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>wind</b> - 4.5 Km</p>
-                                             <p></p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>Humidity</b> - 30% </p>
-                                          </div>
-                                       
-                                    </div>
-                                    <div>
-                                        <div class="card-temperature">24°C</div>
-                                        <p>Sunny</p>
-                                    </div>
-    
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col my-1">
-                            <div class="card" >
-                                <div class="card-body">
-                                    
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <i class="ti ti-uv-index"></i>
-                                        <div class="card-head">
-                                            <h5 class="card-title d-flex align-items-center text-center">Saturday</h5>
-                                            <h6 class="card-subtitle mb-2 text-center">06 Aug</h6>
-                                        </div>
-
-                                    </div>
-                                    <div>
-                                    <div class="d-flex flex-column align-items-center">
-                                          <div class="info-box">
-                                             <p><b>pressure</b> - 800mb</p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>wind</b> - 4.5 Km</p>
-                                             <p></p>
-                                          </div>
-                                          <div class="info-box">
-                                             <p> <b>Humidity</b> - 30% </p>
-                                          </div>
-                                       
-                                    </div>
-                                    <div>
-                                        <div class="card-temperature">24°C</div>
-                                        <p>Sunny</p>
-                                    </div>
-    
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </section>
-
-
+            <section id="overview" class="col-md-7">
                 
+                <div class="row d-flex justify-content-center">
+                   
+                        <div id="windspeed" class="col-md-6 m-1 card" >
+                            <div class="card-body">
+                                <div class="w-25 d-flex justify-content-center">
+                                    <i class="ti ti-pressure"></i>
+                                </div>
+                                
+                                <div class="w-75 d-flex justify-content-center align-items-center">
+                                    <h5 class="card-title">Wind speed</h5>
+                                </div>
+                              
+                            <div class="d-flex justify-content-center wind-speed w-25">
+                                <p class="card-text ms-2">#</p>
+                            </div>
+                          </div>
+                        </div>
+                   
+                    
+                        <div id="Humidity" class="card col m-1 " >
+                            <div class="card-body ">
+                                <div class=" w-25 rain d-flex justify-content-center">
+                                    <i class="ti ti-rain-chance"></i>
+                                </div>
+                               
+                                <div class="w-75 d-flex justify-content-center align-items-center">
+                                    <h5 class="card-title">Humidity</h5>
+                                </div>
+                                
+                                <div class="d-flex justify-content-center w-25 humidity">
+                                    <p class="card-text ms-2">#</p>
+                        
+                                </div>
+                          </div>
+                        </div>
+                   
+                    
+                        <div id="pressure" class="card col-md-6 m-1" >
+                            <div class="card-body">
+                                <div class=" d-flex justify-content-center">
+                                    <i class="ti ti-wind-speed"></i>
+                                </div>
+                                
+                                <div class="w-50 d-flex justify-content-center align-items-center">
+                                    <h5 class="card-title">Pressure</h5>
+                                </div>
+
+
+                               
+                                <div class="d-flex justify-content-center w-25 pressure">
+                                    <p class="card-text ms-2">#</p>
+                                </div>
+                          
+                          </div>
+                        </div>
+                    
+                    
+                        <div class="card col m-1">
+                            <div class="card-body">
+                                <div class="w-25 d-flex justify-content-center">
+                                    <i class="ti ti-uv-index"></i>
+                                </div>
+                                <div class="w-75 d-flex justify-content-center align-items-center">
+                                    <h5 class="card-title">UV-Index</h5>
+                                </div>
+                              
+                                <div class="d-flex justify-content-center w-25 uv-index">
+                                <i class="green-triangle">#</i>
+                                <p class="card-text ms-2">#</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </section>
+               </div>
+                    <section id="upcoming-days" class="mt-5">
+                        <h5>Upcoming days</h5>
+                        <div class="row">
+                        
+                        </div>
+                    </section>
+            </section>
+
+            
+
         </main>
-
-
-
-
-        </div>
-   
-
-
-    
-
-
-
-
-    
-
-
-   <!-- Bootstrap JavaScript Bundle with Popper -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="../assets/js/script.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <script src="../assets/js/script.js"></script>
 </body>
 </html>

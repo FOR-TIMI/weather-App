@@ -1,20 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
+
 
 body{
- color: #001F50;
- background-color: #C5EDF9;
- font-family: montserrat;
- font-size: 16px;
+    /* position: relative; */
+    min-height: 100vh;
+    width: 100%;
+    color: #001F50;
+    background-color: #C5EDF9;
 }
 
-ul{
-    margin: 0;
+/* The main weather section */
+
+#weather{
+    position: absolute;
+    height: 100%;
+    margin: 0 auto;
+    left: 320px;
+    transition: all 0.5s ease;
 }
+
+#weather .weather-title{
+    font-size: 1rem;
+    margin: 20px;
+}
+
+.active ~ #weather{
+   width: 100%;
+   margin: 0 auto;
+    left: 320px;
+}
+
+
+
+
 
 /* Setting all icons */
 .ti{
@@ -23,16 +49,21 @@ ul{
     height: 1em;
 }
 
+.ti-menu{
+    display: inline-block;
+    background: url('../img/menu-icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .ti-search{
     display: inline-block;
     background: url('../img/search-icon.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .ti-recent{
     display: inline-block;
-    background: url('../img/recent.svg');
+    background: url('../img/recents-icon.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -86,62 +117,171 @@ ul{
 }
 
 
+/* Sidebar */
 
-/* searchbod styles */
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background: #BDE8F5;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
 
-#search form{
-    background-color: #BDE8F5;
-    height: 100vh;
+.active{
+    width: 300px;
+ }
+ 
+
+.sidebar #menu-toggle{
+    position: absolute;
+    left: 50%;
+    top: 3%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.active #menu-toggle{
+ left: 90%;
+}
+
+.sidebar ul{
+    margin-top: 100px;
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    z-index: 99;
 }
 
 
 
-.search-box {
-    margin-top: 10px;
-    width: 80%;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid #001F50;
-    padding: 10px;
+.sidebar ul li{
+    z-index: 0;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    list-style: none;
+    line-height: 50px;
+    border-radius: 12px;
 }
 
-.search-box i{
-    font-size: 1.2em;
+.sidebar ul li .tooltip{
+    z-index: 2;
+    position: absolute;
+    height: 35px;
+    left: calc(100% + 15px);
+    top: -20px;
+    transform: translateY(-50%, -50%);
+    border-radius: 6px;
+    line-height: 35px;
+    width: 122px;
+    text-align: center;
+    background-color: #D8F3FB;
+    transition: 0s;
+    opacity: 0;
+    transition: 0s;
 }
 
-.search-box > input{
-    background-color: #BDE8F5;
-    padding-left: 10px;
-    flex: 1;
-    width: 90%;
-    height: 40px;
-    border: none;
-    font-size: 1.2em;
+.active ul li .tooltip{
+    display: block;
+
+}
+
+
+
+.sidebar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+
+.active ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 0;
+    top: 50%;
+}
+
+.sidebar ul li i{
+    margin:0 5px 0 10px;
+}
+
+.sidebar ul li a i{
+    height: 24px;
+    min-width: 24px;
+    line-height: 50px;
+    margin:0 5px 0 13px;
+}
+
+
+.sidebar ul li form input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
     outline: none;
-}
-
-.search-box input::placeholder{
+    border: none;
+    background-color: #D8F3FB;
+    padding-left: 50px ;
     color: #001F50;
 }
 
+
+
+.sidebar ul li .ti-search{
+    position: absolute;
+    top: 30%;  
+    left: 5%;
+    z-index: 99;
+    font-size: 22px; 
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.active .link-name{
+    opacity: 1;
+    pointer-events: auto;
+}
+.link-name{
+    opacity: 0;
+    pointer-events: auto;
+}
+
+.sidebar ul li a{
+    margin-top: 15px;
+    color: #001F50;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.5 ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
 .suggestion-list{
-    box-sizing: border-box;
+z-index: 1;
+top: -10%;
+position: absolute;
+box-sizing: border-box;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: space-between;
 width: 80%;
-background-color: #BDE8F5;
+background-color: #D8F3FB;
 border-radius: 0 0 10px;
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 padding: 0;
 }
 
@@ -151,6 +291,8 @@ padding: 0;
     align-items: center;
     padding: 12px 0px;
 }
+
+
 .suggestion-item:hover{
  background-color: #b6dce7;
 }
@@ -161,32 +303,48 @@ padding: 0;
 .main{
     background-color: #BDE8F5;
     height: 200px;
-    width: 78%;
     border: none;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 50% 56% cover;
-    background-position: top right;
-    background-image: url('../img/weather-sunny.svg');
+    font-size: 0.9rem;   
+ }
+
+.main img{
+    width: 100px;
+    height: 100px;
+}
+
+.main-img{
+    margin: 0;
+    padding: 0;
+    margin-right: 20%;
+}
+
+ #main-content{
+    width: 100%;
  }
 
 
 .card{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
 }
 
 .temperature{
-    font-size: 3em;
+    font-size: 1.7rem;
+    font-weight: 500;
 }
 
+/* .row{
+    border: 1px solid black;
+} */
 
 /* overview section  */
 
 
-#overview,#upcoming-days{
-    width: 80%;
+#upcoming-days{
+    width: 90%;
     margin: 10px auto;
 }
+
 
 #overview .card{
     background-color: #BDE8F5;
@@ -196,6 +354,11 @@ padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: 0.9rem;
+}
+
+#overview .card-title{
+    font-size: 1em;
 }
 
 #overview .ti{
@@ -218,34 +381,49 @@ padding: 0;
     border-bottom-color: green;
     border-left-color: transparent;
 }
+.red-triangle{
+    margin-top: 8px;
+    color: white;
+    width: 0px;
+    height: 0px;
+    border: 8px solid black;
+    border-top-color: red;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
 
 
 /* upcoming days section  */
 
-#upcoming-days h5{
-    font-size: 15px;
-    font-weight: 600;
-}
-#upcoming-days h6{
-    font-size: 12px;
 
-}
+
 
 #upcoming-days .card{
     border: none;
     background-color: #BDE8F5;
+    height: 350px;
+
 }
 
-#upcoming-days .card p{
-    font-size: 10px;
-    margin: 0;
-}
+
 
 #upcoming-days .info-box{
-    margin-bottom: 3px;
-    border-bottom: 1px solid #001F50;
+    font-size: 12px;
+    margin-bottom: 5px;
+    background-color: #D8F3FB;
     width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    padding-top: 10px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+  
+} 
+.recent-name{
+    width: 60%;
+    padding-left: 8px ;
 }
 
 #upcoming-days .card-temperature{
@@ -261,3 +439,6 @@ padding: 0;
         background-position: bottom right -80px;
     }
   }
+
+
+
