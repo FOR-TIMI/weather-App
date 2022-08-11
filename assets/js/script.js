@@ -377,7 +377,7 @@ function setHumidity(humidity,el){
 function requestUVIndex(coordinates,name){
    
   const {lon, lat} = coordinates;
-	fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=b3d233c09be1dd283fac50c81f1249cd&exclude=hourly&unit=metric`)
+	fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=b3d233c09be1dd283fac50c81f1249cd&exclude=hourly&units=metric`)
 	.then(result => result.json())
 	.then(data => {
         setDaysAfter(data.daily)
