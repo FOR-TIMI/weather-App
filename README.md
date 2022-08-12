@@ -19,7 +19,7 @@ This website that provides relevant updates on the weather conditions around the
 * JavaScript
 
 
-##Screenshots
+## Screenshots
 
 ![image](https://user-images.githubusercontent.com/104241247/183561224-1a93e86a-4f73-41c9-b692-1460e73ef57a.png)
 ![image](https://user-images.githubusercontent.com/104241247/183554316-7679378c-0814-43ca-9fdd-4b559b4cbe04.png)
