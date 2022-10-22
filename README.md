@@ -2,7 +2,7 @@
 
 
 ## Purpose
-This website that provides relevant updates on the weather conditions around the world
+This website that provides real-time updates on the weather conditions around the world. A user can search a place up and get the weather outside instantly. 
 
 
 * when a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history
