@@ -28,5 +28,11 @@ This website that provides real-time updates on the weather conditions around th
 ## Website
 https://for-timi.github.io/weather-App/
 
+
+## Additional Information
+- For additional questions contact me via email on [femiladiranerife24@gmail.com](mailto:femiladiranerife24@gmail.com)
+- If you found this project somewhat useful, please feel free to follow me, add a star to this project so i know who you are and [view some other projects](https://github.com/FOR-TIMI/). 
+
+
 ## Contribution
 Made with ❤️ by Timi
